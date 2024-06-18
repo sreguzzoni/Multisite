@@ -28,7 +28,7 @@ This repository contains the code and configuration for a multi-page CV website,
 
 ### Directory Structure
 
-\`\`\`
+```
 .
 ├── docker-compose.yml
 ├── README.md
@@ -65,81 +65,81 @@ This repository contains the code and configuration for a multi-page CV website,
     ├── default.conf
     └── html
         └── index.html
-\`\`\`
+```
 
 ### Setting Up and Running the Project
 
 1. **Clone the Repository:**
-   \`\`\`sh
+   ```sh
    git clone https://github.com/yourusername/multi-stack-cv-website.git
    cd multi-stack-cv-website
-   \`\`\`
+   ```
 
 2. **Initialize and Tidy Go Modules:**
-   \`\`\`sh
+   ```sh
    cd go
    go mod init yourmodule
    go mod tidy
    cd ..
-   \`\`\`
+   ```
 
 3. **Build and Run the Containers:**
-   \`\`\`sh
+   ```sh
    docker-compose up --build
-   \`\`\`
+   ```
 
 4. **Access the Website:**
-   Open your browser and navigate to \`http://localhost\`.
+   Open your browser and navigate to `http://localhost`.
 
 ### Detailed Instructions for Each Service
 
 #### Next.js (About Me Page)
 
-- **Directory:** \`nextjs\`
+- **Directory:** `nextjs`
 - **Build Command:**
-  \`\`\`sh
+  ```sh
   docker build -t nextjs-service .
-  \`\`\`
+  ```
 - **Run Command:**
-  \`\`\`sh
+  ```sh
   docker run -p 3000:3000 nextjs-service
-  \`\`\`
+  ```
 
 #### Go (My Projects Page)
 
-- **Directory:** \`go\`
+- **Directory:** `go`
 - **Build Command:**
-  \`\`\`sh
+  ```sh
   docker build -t go-service .
-  \`\`\`
+  ```
 - **Run Command:**
-  \`\`\`sh
+  ```sh
   docker run -p 8080:8080 go-service
-  \`\`\`
+  ```
 
 #### Django (Contact Page)
 
-- **Directory:** \`django\`
+- **Directory:** `django`
 - **Build Command:**
-  \`\`\`sh
+  ```sh
   docker build -t django-service .
-  \`\`\`
+  ```
 - **Run Command:**
-  \`\`\`sh
+  ```sh
   docker run -p 8000:8000 django-service
-  \`\`\`
+  ```
 
 #### Nginx (Reverse Proxy)
 
-- **Directory:** \`nginx\`
+- **Directory:** `nginx`
 - **Build Command:**
-  \`\`\`sh
+  ```sh
   docker build -t nginx-service .
-  \`\`\`
+  ```
 - **Run Command:**
-  \`\`\`sh
+  ```sh
   docker run -p 80:80 nginx-service
-  \`\`\`
+  ```
 
 ### Troubleshooting
 
