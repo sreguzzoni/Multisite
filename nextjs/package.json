@@ -9,6 +9,15 @@
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-vertical-timeline-component": "latest",
+    "react-icons": "latest",
+    "framer-motion": "latest",
+    "styled-components": "latest",
+    "chart.js": "latest",
+    "@babel/runtime": "latest"
+  },
+  "devDependencies" : {
+    "babel-plugin-styled-components": "latest"
   }
 }
