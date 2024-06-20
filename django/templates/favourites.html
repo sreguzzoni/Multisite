@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Favourite Things{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/favourites.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="hero">
+    <h1>My Favourite Things</h1>
+    <p>A showcase of my favourite things.</p>
+  </div>
+  <div class="container">
+    <div class="section">
+      <div class="favourites-grid">
+        <div class="favourite-item large">
+          <i class="material-icons favourite-icon">favorite</i>
+          <h5 class="favourite-title">Favourite One</h5>
+          <p class="favourite-description">A brief description of Favourite One. Highlighting the key features and why I love it.</p>
+        </div>
+        <div class="favourite-item small">
+          <i class="material-icons favourite-icon">favorite</i>
+          <h5 class="favourite-title">Favourite Two</h5>
+          <p class="favourite-description">A brief description of Favourite Two. Highlighting the key features and why I love it.</p>
+        </div>
+        <div class="favourite-item medium">
+          <i class="material-icons favourite-icon">favorite</i>
+          <h5 class="favourite-title">Favourite Three</h5>
+          <p class="favourite-description">A brief description of Favourite Three. Highlighting the key features and why I love it.</p>
+        </div>
+        <div class="favourite-item medium">
+          <i class="material-icons favourite-icon">favorite</i>
+          <h5 class="favourite-title">Favourite Four</h5>
+          <p class="favourite-description">A brief description of Favourite Four. Highlighting the key features and why I love it.</p>
+        </div>
+        <div class="favourite-item large">
+          <i class="material-icons favourite-icon">favorite</i>
+          <h5 class="favourite-title">Favourite Five</h5>
+          <p class="favourite-description">A brief description of Favourite Five. Highlighting the key features and why I love it.</p>
+        </div>
+        <div class="favourite-item small">
+          <i class="material-icons favourite-icon">favorite</i>
+          <h5 class="favourite-title">Favourite Six</h5>
+          <p class="favourite-description">A brief description of Favourite Six. Highlighting the key features and why I love it.</p>
+        </div>
+        <!-- Add more favourites as needed -->
+      </div>
+    </div>
+  </div>
+{% endblock %}

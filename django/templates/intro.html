@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Introduction{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/intro.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="hero">
+    <h1>Introduction</h1>
+    <p>An overview of the technologies used in this section.</p>
+  </div>
+  <div class="container">
+    <div class="section">
+      <div class="carousel carousel-slider center">
+        <div class="carousel-item" href="#one!">
+          <img src="https://via.placeholder.com/800x400?text=Django">
+          <div class="carousel-caption">
+            <h2>Django</h2>
+            <p>A high-level Python web framework that encourages rapid development and clean, pragmatic design.</p>
+          </div>
+        </div>
+        <div class="carousel-item" href="#two!">
+          <img src="https://via.placeholder.com/800x400?text=Materialize+CSS">
+          <div class="carousel-caption">
+            <h2>Materialize CSS</h2>
+            <p>A modern responsive front-end framework based on Material Design.</p>
+          </div>
+        </div>
+        <div class="carousel-item" href="#three!">
+          <img src="https://via.placeholder.com/800x400?text=Docker">
+          <div class="carousel-caption">
+            <h2>Docker</h2>
+            <p>Containerization technology to package and run applications in isolated environments.</p>
+          </div>
+        </div>
+        <div class="carousel-item" href="#four!">
+          <img src="https://via.placeholder.com/800x400?text=Nginx">
+          <div class="carousel-caption">
+            <h2>Nginx</h2>
+            <p>A web server and reverse proxy server for serving static content and proxying requests.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
