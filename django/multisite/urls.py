@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from contact.views import contact_view
+from . import views  # Import views from the current package
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contact/', contact_view, name='contact'),
+    path('personal/intro/', views.intro, name='intro'),
+    path('personal/hobbies/', views.hobbies, name='hobbies'),
+    path('personal/favourites/', views.favourites, name='favourites'),
 ]
