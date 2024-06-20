@@ -1,5 +1,5 @@
 # Dockerfile for Go
-FROM golang:1.16-alpine
+FROM public.ecr.aws/docker/library/golang:1.16-alpine
 
 WORKDIR /build
 

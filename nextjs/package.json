@@ -15,9 +15,12 @@
     "framer-motion": "latest",
     "styled-components": "latest",
     "chart.js": "latest",
-    "@babel/runtime": "latest"
+    "react-chartjs-2": "latest",
+    "react-responsive-carousel": "latest"
   },
   "devDependencies" : {
-    "babel-plugin-styled-components": "latest"
+    "tailwindcss": "latest",
+    "postcss": "latest",
+    "autoprefixer": "latest"
   }
 }

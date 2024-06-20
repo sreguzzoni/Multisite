@@ -1,14 +1,111 @@
-/* You can customize this CSS file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #f8fdff, #cfe9f4);
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
-h1 {
-  color: #333;
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-p {
-  color: #666;
+nav.navbar {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+nav.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav.navbar ul li {
+  display: inline;
+}
+
+nav.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.container {
+  flex-grow: 1;
+  padding: 20px;
+  animation: slideIn 2s ease-in-out;
+}
+
+.hero {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.skills-list, .timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.skills-item, .timeline-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+footer {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
