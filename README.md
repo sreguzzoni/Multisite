@@ -1,156 +1,72 @@
+# Multi-Technology CV Website
 
-# Multi-Stack CV Website
-
-This repository contains the code and configuration for a multi-page CV website, where each page is implemented using a different stack of technologies. This project showcases the flexibility and adaptability of working with various modern web development frameworks and tools.
+This project is a multi-page CV website built using a variety of technologies for each section, all managed within Docker containers. Each section of the website showcases different aspects of the developer's skills, experiences, and personal interests, with each section using a different technology stack.
 
 ## Project Structure
 
-- **Landing Page**: The entry point of the website, implemented with plain HTML, CSS, and JavaScript.
-- **About Me Page**: Built using Next.js, a React-based framework for server-rendered applications.
-- **My Projects Page**: Developed with Go for the backend and Tailwind CSS for styling.
-- **Contact Page**: Created using Django, a high-level Python web framework.
+- **Next.js (Professional Pages)**
+  - Routes under `/professional`
+  - Pages: Intro, Work Experience, Study, Skills, Timeline
+- **Django (Personal Pages)**
+  - Routes under `/personal`
+  - Pages: Intro, Hobbies, Favorite Things
+- **Go (Projects)**
+  - Routes under `/projects`
+  - Pages: Intro, Project List
 
 ## Technologies Used
 
-- **HTML/CSS/JavaScript**: For the static landing page.
-- **Next.js**: For the "About Me" section, providing server-side rendering and static site generation.
-- **Go**: Serving the "My Projects" page with a simple Go web server.
-- **Tailwind CSS**: Utilized for styling the "My Projects" page.
-- **Django**: Powering the "Contact" section with Django’s robust web framework capabilities.
-- **Nginx**: Acting as a reverse proxy to route requests to the appropriate service.
+- **Next.js**: Frontend framework for the professional section.
+- **Django**: Backend framework for the personal section.
+- **Go**: Programming language for the projects section.
+- **Tailwind CSS**: Styling framework for the Next.js section.
+- **Bulma**: CSS framework for the Django section.
+- **Chart.js**: Used for data visualization in the Next.js skills page.
+- **React Responsive Carousel**: Used for creating a carousel slider in the Next.js skills page.
+- **Docker**: Containerization of the different sections.
 
-## Project Setup
+## Setup and Installation
 
 ### Prerequisites
 
 - Docker
 - Docker Compose
 
-### Directory Structure
+### Installation Steps
 
-```
-.
-├── docker-compose.yml
-├── README.md
-├── django
-│   ├── requirements.txt
-│   ├── Dockerfile
-│   ├── manage.py
-│   ├── contact
-│   │   ├── __init__.py
-│   │   ├── views.py
-│   ├── templates
-│   │   └── contact.html
-│   └── multisite
-│       ├── settings.py
-│       ├── urls.py
-│       ├── wsgi.py
-├── go
-│   ├── go.mod
-│   ├── Dockerfile
-│   ├── main.go
-│   └── templates
-│       └── projects.html
-├── nextjs
-│   ├── Dockerfile
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── styles
-│   │   └── globals.css
-│   └── pages
-│       ├── _app.js
-│       └── about.js
-└── nginx
-    ├── Dockerfile
-    ├── default.conf
-    └── html
-        └── index.html
+1. Clone the repository:
+```sh
+git clone https://github.com/yourusername/multi-tech-cv-website.git
+cd multi-tech-cv-website
 ```
 
-### Setting Up and Running the Project
+2. Build and run the Docker containers:
+```sh
+docker-compose up --build
+```
 
-1. **Clone the Repository:**
-   ```sh
-   git clone https://github.com/yourusername/multi-stack-cv-website.git
-   cd multi-stack-cv-website
-   ```
+3. Access the website at `http://localhost:8080`
 
-2. **Initialize and Tidy Go Modules:**
-   ```sh
-   cd go
-   go mod init yourmodule
-   go mod tidy
-   cd ..
-   ```
+### Docker Configuration
 
-3. **Build and Run the Containers:**
-   ```sh
-   docker-compose up --build
-   ```
+- **Docker Compose**: Orchestrates the different services (Next.js, Django, Go, Nginx).
+- **Next.js Dockerfile**: Defines the setup for the Next.js service.
+- **Django Dockerfile**: Defines the setup for the Django service.
+- **Go Dockerfile**: Defines the setup for the Go service.
+- **Nginx Dockerfile**: Configures Nginx to serve as a reverse proxy for the different services.
 
-4. **Access the Website:**
-   Open your browser and navigate to `http://localhost`.
+### Features
 
-### Detailed Instructions for Each Service
+- **Sticky Navigation**: Both the header and footer remain fixed on the screen for easy access.
+- **Dynamic Skills Page**: Includes a carousel with technical and soft skills charts.
+- **Responsive Design**: Ensures the website is accessible on different devices.
+- **Modular Architecture**: Different sections use different technology stacks, showcasing versatility.
 
-#### Next.js (About Me Page)
+### Future Improvements
 
-- **Directory:** `nextjs`
-- **Build Command:**
-  ```sh
-  docker build -t nextjs-service .
-  ```
-- **Run Command:**
-  ```sh
-  docker run -p 3000:3000 nextjs-service
-  ```
-
-#### Go (My Projects Page)
-
-- **Directory:** `go`
-- **Build Command:**
-  ```sh
-  docker build -t go-service .
-  ```
-- **Run Command:**
-  ```sh
-  docker run -p 8080:8080 go-service
-  ```
-
-#### Django (Contact Page)
-
-- **Directory:** `django`
-- **Build Command:**
-  ```sh
-  docker build -t django-service .
-  ```
-- **Run Command:**
-  ```sh
-  docker run -p 8000:8000 django-service
-  ```
-
-#### Nginx (Reverse Proxy)
-
-- **Directory:** `nginx`
-- **Build Command:**
-  ```sh
-  docker build -t nginx-service .
-  ```
-- **Run Command:**
-  ```sh
-  docker run -p 80:80 nginx-service
-  ```
-
-### Troubleshooting
-
-- Ensure all services are running by checking the logs.
-- Verify the file paths and directory structure if you encounter any build issues.
-- Use the provided debugging steps in the Dockerfile to check file permissions and existence.
-
-### Contributing
-
-Feel free to submit issues or pull requests if you find any bugs or have suggestions for improvements. Contributions are always welcome!
+- Enhance animations and transitions for a more dynamic user experience.
+- Add more interactive elements like contact forms or feedback sections.
+- Integrate a database for dynamic content management.
 
 ### License
-
 This project is licensed under the MIT License.
