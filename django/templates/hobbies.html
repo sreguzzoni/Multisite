@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Hobbies{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/hobbies.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="hero">
+    <h1>My Hobbies</h1>
+    <p>A showcase of my hobbies and interests.</p>
+  </div>
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <ul class="hobbies-list">
+            <li class="hobby-item left-align">
+              <div class="hobby-box">
+                <i class="material-icons hobby-icon">star</i>
+                <div class="hobby-content">
+                  <h5 class="hobby-title">Hobby One</h5>
+                  <p class="hobby-description">A brief description of Hobby One. Highlighting the key features and why I enjoy it.</p>
+                </div>
+              </div>
+            </li>
+            <li class="hobby-item right-align">
+              <div class="hobby-box">
+                <div class="hobby-content">
+                  <h5 class="hobby-title">Hobby Two</h5>
+                  <p class="hobby-description">A brief description of Hobby Two. Highlighting the key features and why I enjoy it.</p>
+                </div>
+                <i class="material-icons hobby-icon">star</i>
+              </div>
+            </li>
+            <li class="hobby-item left-align">
+              <div class="hobby-box">
+                <i class="material-icons hobby-icon">star</i>
+                <div class="hobby-content">
+                  <h5 class="hobby-title">Hobby Three</h5>
+                  <p class="hobby-description">A brief description of Hobby Three. Highlighting the key features and why I enjoy it.</p>
+                </div>
+              </div>
+            </li>
+            <li class="hobby-item right-align">
+              <div class="hobby-box">
+                <div class="hobby-content">
+                  <h5 class="hobby-title">Hobby Four</h5>
+                  <p class="hobby-description">A brief description of Hobby Four. Highlighting the key features and why I enjoy it.</p>
+                </div>
+                <i class="material-icons hobby-icon">star</i>
+              </div>
+            </li>
+            <!-- Add more hobbies as needed -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

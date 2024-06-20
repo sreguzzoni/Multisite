@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Simone Reguzzoni - Personal{% endblock %}</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% block extra_css %}{% endblock %}
+
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Simone Reguzzoni - Personal</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/personal/intro">Intro</a></li>
+        <li><a href="/personal/hobbies">Hobbies</a></li>
+        <li><a href="/personal/favourites">Favourite Things</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="main-content">
+    {% block content %}{% endblock %}
+  </div>
+  <footer class="footer">
+    <p>&copy; 2023 Your Name. All rights reserved.</p>
+    <p>Contact: your.email@example.com</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+      M.Carousel.init(elems, { fullWidth: true, indicators: true, duration: 500 });
+    });
+  </script>
+</body>
+</html>
